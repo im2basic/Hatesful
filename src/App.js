@@ -9,6 +9,7 @@ import HomepageLayout from './layouts/HomepageLayout'
 // import Header from './components/Header';
 import Homepage from './pages/Homepage';
 import Registration from './pages/Registration';
+import Login from './pages/Login';
 
 import './default.scss';
 
@@ -26,6 +27,11 @@ function App() {
         <Route path="/register" render={() => (
           <MainLayout>
             <Registration/>
+          </MainLayout>
+        )} />
+        <Route path="/login" render={() => (
+          <MainLayout>
+            <Login/>
           </MainLayout>
         )} />
       </switch>
