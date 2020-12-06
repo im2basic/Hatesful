@@ -1,29 +1,36 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './styles.scss';
 import Button from './../Forms/Button';
+import {signInWithGoogle} from './../../firebase/utils'
 
-const Signin = props => {
-    return (
-        <div className ="signin">
-            <div className="wrap">
-                <h2>Login</h2>
+class SignIn extends Component{
 
-                <div className="formWrap">
-                    <form>
-                        <div className="socialSignin">
-                            <div className="row">
-                                <Button>
-                                    Sign In With Google
-                                </Button>
+    handleSubmit = async e => {
+        e.preventDefault();
+    }
+
+    render(){
+        return (
+            <div className ="signin">
+                <div className="wrap">
+                    <h2>Login</h2>
+                    <div className="formWrap">
+                        <form onSubmit={this.handleSubmit}>
+                            <div className="socialSignin">
+                                <div className="row">
+                                    <Button onClick={signInWithGoogle}>
+                                        Sign In With Google
+                                    </Button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
-
+                        </form>
+    
+                    </div>
+    
                 </div>
-
             </div>
-        </div>
-    )
+        )
+    }
 }
 
-export default Signin;
+export default SignIn;
